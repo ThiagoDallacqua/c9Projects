@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<h1>The Post Page</h1>
+
+<ul>
+    
+    <% posts.forEach(function(post){%>
+    
+        <li>
+            
+            <p><%= post.title%></p>
+            <p><%= post.author%>: <%= post.comment%></p>
+        </li>
+    <% })%>
+</ul>
+
+<% include partials/footer %>
