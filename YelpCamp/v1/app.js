@@ -10,6 +10,15 @@ var campgrounds = [
     
         {name: "Salmon Creek", image:"http://i.telegraph.co.uk/multimedia/archive/01439/camp-family_1439761c.jpg"},
         {name: "Granite Hill", image:"http://cdn-image.travelandleisure.com/sites/default/files/styles/720x450/public/1443561122/CAMPING0915-Glacier-National-Park.jpg?itok=HOYtWwYB"},
+        {name: "Mountain Goat's Rest", image:"http://www.lamag.com/wp-content/uploads/sites/9/2015/06/ventana.jpg"},
+        {name: "Salmon Creek", image:"http://i.telegraph.co.uk/multimedia/archive/01439/camp-family_1439761c.jpg"},
+        {name: "Granite Hill", image:"http://cdn-image.travelandleisure.com/sites/default/files/styles/720x450/public/1443561122/CAMPING0915-Glacier-National-Park.jpg?itok=HOYtWwYB"},
+        {name: "Mountain Goat's Rest", image:"http://www.lamag.com/wp-content/uploads/sites/9/2015/06/ventana.jpg"},
+        {name: "Salmon Creek", image:"http://i.telegraph.co.uk/multimedia/archive/01439/camp-family_1439761c.jpg"},
+        {name: "Granite Hill", image:"http://cdn-image.travelandleisure.com/sites/default/files/styles/720x450/public/1443561122/CAMPING0915-Glacier-National-Park.jpg?itok=HOYtWwYB"},
+        {name: "Mountain Goat's Rest", image:"http://www.lamag.com/wp-content/uploads/sites/9/2015/06/ventana.jpg"},
+        {name: "Salmon Creek", image:"http://i.telegraph.co.uk/multimedia/archive/01439/camp-family_1439761c.jpg"},
+        {name: "Granite Hill", image:"http://cdn-image.travelandleisure.com/sites/default/files/styles/720x450/public/1443561122/CAMPING0915-Glacier-National-Park.jpg?itok=HOYtWwYB"},
         {name: "Mountain Goat's Rest", image:"http://www.lamag.com/wp-content/uploads/sites/9/2015/06/ventana.jpg"}
     ];
 
