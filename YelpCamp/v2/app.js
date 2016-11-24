@@ -14,7 +14,8 @@ app.set("view engine", "ejs");
 var campgroundSchema = new mongoose.Schema({
     
    name: String,
-   image: String
+   image: String,
+   description: String
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
@@ -22,7 +23,8 @@ var Campground = mongoose.model("Campground", campgroundSchema);
 /*Campground.create({
     
     name: "Mountain Goat's Rest",
-    image:"http://www.lamag.com/wp-content/uploads/sites/9/2015/06/ventana.jpg"
+    image:"http://www.lamag.com/wp-content/uploads/sites/9/2015/06/ventana.jpg",
+    description: "This is a huge plato very close to a beautiful mountain, no bathrooms. Have a nice river nearby!"
 }, function(err, campground){
     
     if(err){
@@ -52,36 +54,51 @@ app.get("/", function(req, res){
    res.render("landing"); 
 });
 
-app.get("/campgrounds", function(req, res){
+app.get("/index", function(req, res){ //INDEX route #RESFUL ROUTES
     
     Campground.find({}, function(err, allCampgrounds){
         
        if(err){
            
-           console.log("ERROR!");
+           console.log(err);
        }else{
            
-           res.render("campgrounds", {campgrounds: allCampgrounds});
+           res.render("index", {campgrounds: allCampgrounds});
        }
     });
 });
 
-app.get("/campgrounds/new", function(req, res) {
+app.get("/index/create", function(req, res) {//NEW route #RESFUL ROUTES
     
-    res.render("new.ejs");
+    res.render("create");
 });
 
-app.post("/campgrounds", function(req, res){
+app.get("/index/:id", function(req, res) {//SHOW route #RESFUL ROUTES
+
+    Campground.findById(req.params.id, function(err, foundCampground){
+        
+        if(err){
+            
+            console.log(err);
+        }else{
+            
+            res.render("show", {campground: foundCampground});
+        }
+    });
+});
+
+app.post("/index", function(req, res){//CREATE route #RESFUL ROUTES
     
-    var name = req.body.name;
-    var image = req.body.image;
-    var newcampground = {name: name, image: image};
+    var name = req.body.name,
+    image = req.body.image,
+    desc = req.body.description,
+    newcampground = {name: name, image: image, description: desc};
     
     Campground.create(newcampground, function(err, campground){
         
         if(err){
             
-            console.log("ERROR!");
+            console.log(err);
         }else{
             
             console.log("NEW CAMPGROUND ADDED!");
@@ -89,7 +106,7 @@ app.post("/campgrounds", function(req, res){
         }
     });
     
-    res.redirect("/campgrounds");
+    res.redirect("/index");
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
