@@ -68,9 +68,9 @@ app.get("/index", function(req, res){ //INDEX route #RESFUL ROUTES
     });
 });
 
-app.get("/index/create", function(req, res) {//NEW route #RESFUL ROUTES
+app.get("/index/new", function(req, res) {//NEW route #RESFUL ROUTES
     
-    res.render("create");
+    res.render("new");
 });
 
 app.get("/index/:id", function(req, res) {//SHOW route #RESFUL ROUTES
