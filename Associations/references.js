@@ -1,32 +1,8 @@
-var mongoose = require("mongoose");
+var mongoose = require("mongoose"),
+    Post = require("./models/post"),
+    User = require("./models/user");
 
 mongoose.connect("mongodb://localhost/blog_demo_2");
-
-//POST - title, content
-var postSchema = new mongoose.Schema({
-    
-   title: String,
-   content: String
-});
-
-var Post = mongoose.model("Post", postSchema);
-
-//USER - emai, name
-var userSchema = new mongoose.Schema({
-    
-    email: String,
-    name: String,
-    posts: [
-        
-           {
-               
-               type: mongoose.Schema.Types.ObjectId,
-               ref: "Post"
-           }
-        ]
-});
-
-var User = mongoose.model("User", userSchema);
 
 /*User.create({
     
@@ -34,9 +10,9 @@ var User = mongoose.model("User", userSchema);
     name: "Bob Belcher"
 });*/
 
-/*Post.create({
+Post.create({
     
-   title: "How to coock the best burguer pt. 3",
+   title: "How to coock the best burguer pt. 4",
    content: "blah blah blah blah"
 }, function(err, post){
     
@@ -66,12 +42,12 @@ var User = mongoose.model("User", userSchema);
             }
         });
     }
-});*/
+});
 
 //FIND USER
 //FIND ALL POSTS FOR THAT USER
 
-User.findOne({email: "bob@gmail.com"}).populate("posts").exec(function(err, user){
+/*User.findOne({email: "bob@gmail.com"}).populate("posts").exec(function(err, user){
     
     if(err){
         
@@ -80,4 +56,4 @@ User.findOne({email: "bob@gmail.com"}).populate("posts").exec(function(err, user
         
         console.log(user);
     }
-});
+});*/
