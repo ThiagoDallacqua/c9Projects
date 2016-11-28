@@ -7,7 +7,7 @@
         
         <div class="item">
             
-            <img class="ui centered rounded image" src="<%= blog.image %>" style="width: 60%">
+            <img class="ui centered rounded image" src="<%= blog.image %>">
             
             <div class="content">
                 
@@ -18,6 +18,13 @@
                 
                 <p><%- blog.body %></p><!--the "-" is used to run some html code that might have been placed in the blog post-->
             </div>
+            
+            <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+            
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                
+                <button class="ui red basic button">Delete</button>
+            </form>
         </div>
     </div>
 </div>
