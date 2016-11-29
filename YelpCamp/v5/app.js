@@ -8,11 +8,9 @@ var express     = require("express"),
     //User        = require("./models/user");
     
 mongoose.connect("mongodb://localhost/yelp_camp_v4");
-
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
-
 seedDB();
 
 app.get("/", function(req, res){
