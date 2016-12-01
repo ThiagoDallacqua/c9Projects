@@ -36,6 +36,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                 
                 if(err){
                     
+                    req.flash("error", "Someting went wrong...");
                     console.log(err);
                 }else{
                     
@@ -103,6 +104,7 @@ router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, re
             res.redirect("back");
         }else{
             
+            req.flash("success", "Comment deleted!");
             res.redirect("/index/" + req.params.id);
         }
     });

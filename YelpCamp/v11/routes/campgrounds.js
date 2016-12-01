@@ -108,7 +108,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){//CREATE route #RESFU
             console.log(err);
         }else{
             
-            console.log("NEW CAMPGROUND ADDED!");
+            req.flash("success", "New Campground added!");
             console.log(campground);
         }
     });
